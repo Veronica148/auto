@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Report</title>
+    <style type="text/css">
+    body{font-family: sans-serif;font-size: middle;padding: 0px}
+    .table_with_caption{border-style: solid; border-width: 1px; border-color: brown}
+    th,td {font-size: 90%}
+    th {vertical-align:middle;background:lightblue;color: black;}
+    caption {text-align: left;color: brown;font-weight: bold;}
+    tbody tr:nth-child(even) { background: #F0F0FF;}
+    .center_link{display:block;text-align:center}
+    </style>
+</head>
+<body>
+#foreach( $line in $reportBodyList )
+$line
+#end
+</body>
+
+</html>

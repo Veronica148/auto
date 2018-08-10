@@ -1,0 +1,345 @@
+{
+  "providers": [
+    {
+      "name": "VIMN TVE Guest",
+      "mvpd_id": "vimntveguest",
+      "usernameFieldAndroid": "XPath:://android.widget.EditText[contains(@resource-id,'username')]",
+      "passwordFieldAndroid": "XPath:://android.widget.EditText[contains(@resource-id,'password')]",
+      "submitButtonAndroid": "XPath:://android.widget.Button[contains(@content-desc,'Sign In') or contains(@text,'Sign In')]",
+      "usernameFieldIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].textFields()[0]",
+      "passwordFieldIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].secureTextFields()[0]",
+      "submitButtonIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].buttons()[0]",
+      "usernameFieldIOS_10": "XPath:://XCUIElementTypeTextField[@value='username']",
+      "passwordFieldIOS_10": "XPath:://XCUIElementTypeSecureTextField[@value='password']",
+      "submitButtonIOS_10": "XPath:://XCUIElementTypeButton[@label='Sign In']",
+      "tileLocatorSuffix": "TVE vimntveguest Logo",
+      "authN_authZ_credential": [
+        {
+          "locale": "Panama",
+          "login": "vimntveguest",
+          "password": "froyo123",
+          "environment": "staging",
+          "brands": "mtv"
+        }
+      ],
+      "authN_NoauthZ_credential": [
+        {
+          "locale": "Mexico",
+          "login": "vimntvefail",
+          "password": "froyo123",
+          "environment": "staging",
+          "brands": "comedycentral"
+        },
+        {
+          "locale": "Peru",
+          "login": "vimntvefail",
+          "password": "froyo123",
+          "environment": "staging",
+          "brands": "nick"
+        }
+      ]
+    },
+    {
+      "name": "Antina",
+      "mvpd_id": "ant",
+      "usernameFieldAndroid": "XPath:://android.view.View/android.widget.EditText[1]",
+      "passwordFieldAndroid": "XPath:://android.view.View/android.widget.EditText[2]",
+      "submitButtonAndroid": "XPath:://android.widget.Button[contains(@content-desc,'INGRESAR') or contains(@text,'INGRESAR')]",
+      "usernameFieldIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].textFields()[0]",
+      "passwordFieldIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].secureTextFields()[0]",
+      "submitButtonIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].buttons().firstWithPredicate(\"label == 'INGRESAR' \")",
+      "usernameFieldIOS_10": "XPath:://XCUIElementTypeTextField[@value='E-mail Registrado']",
+      "passwordFieldIOS_10": "XPath:://XCUIElementTypeSecureTextField[contains(@value,'Contrase')]",
+      "submitButtonIOS_10": "XPath:://XCUIElementTypeButton[@label='INGRESAR']",
+      "tileLocatorSuffix": "TVE ant Logo",
+      "authN_authZ_credential": [
+        {
+          "locale": "Argentina",
+          "login": "corina97@live.com.ar",
+          "password": "samy2002",
+          "environment": "staging",
+          "brands": "nick"
+        }
+      ]
+    },
+    {
+      "name": "RiksTV",
+      "mvpd_id": "rikstv",
+      "passwordFieldAndroid": "XPath:://android.widget.EditText[contains(@resource-id,'session_password')]",
+      "submitButtonAndroid": "XPath:://android.widget.Button[contains(@content-desc,'Submit') or contains(@text,'Submit')]",
+      "usernameFieldAndroid": "XPath:://android.widget.EditText[contains(@resource-id,'session_username')]",
+      "usernameFieldIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].textFields()[0]",
+      "passwordFieldIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].secureTextFields()[0]",
+      "submitButtonIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].buttons().firstWithPredicate(\"label == 'Submit' \")",
+      "usernameFieldIOS_10": "XPath:://XCUIElementTypeTextField[@value='Username']",
+      "passwordFieldIOS_10": "XPath:://XCUIElementTypeSecureTextField[@value='Password']",
+      "submitButtonIOS_10": "XPath:://XCUIElementTypeButton[contains(@label,'Submit')]",
+      "tileLocatorSuffix": "TVE rikstv Logo",
+      "authN_authZ_credential": [
+        {
+          "locale": "Norway",
+          "login": "anders.kalland@rikstv.no",
+          "password": "1234",
+          "environment": "staging",
+          "brands": "mtv"
+        },
+        {
+          "locale": "Norway",
+          "login": "anders.kalland@rikstv.no",
+          "password": "1234",
+          "environment": "staging",
+          "brands": "nick"
+        }
+      ]
+    },
+    {
+      "name": "Get",
+      "mvpd_id": "get",
+      "passwordFieldAndroid": "XPath:://android.widget.EditText[@resource-id='session_password']",
+      "submitButtonAndroid": "XPath:://android.widget.Button[contains(@content-desc,'Submit') or contains(@text,'Submit')]",
+      "usernameFieldAndroid": "XPath:://android.widget.EditText[@resource-id='session_username']",
+      "usernameFieldIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].textFields()[0]",
+      "passwordFieldIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].secureTextFields()[0]",
+      "submitButtonIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].buttons().firstWithPredicate(\"label == 'Submit' \")",
+      "usernameFieldIOS_10": "XPath:://XCUIElementTypeTextField[@value='Username']",
+      "passwordFieldIOS_10": "XPath:://XCUIElementTypeSecureTextField[@value='Password']",
+      "submitButtonIOS_10": "XPath:://XCUIElementTypeButton[@label='Submit']",
+      "tileLocatorSuffix": "TVE get Logo",
+      "authN_authZ_credential": [
+        {
+          "locale": "Norway",
+          "login": "test-mtv-login4",
+          "password": "MTVpassword",
+          "environment": "staging",
+          "brands": "mtv"
+        }
+      ]
+    },
+    {
+      "name": "Gigared",
+      "mvpd_id": "grd",
+      "usernameFieldAndroid": "XPath:://android.widget.EditText[@resource-id='username']",
+      "passwordFieldAndroid": "XPath:://android.widget.EditText[@resource-id='password']",
+      "submitButtonAndroid": "XPath:://android.widget.Button[contains(@content-desc,'Ingresar') or contains(@text,'Ingresar')]",
+      "usernameFieldIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].textFields()[0]",
+      "passwordFieldIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].secureTextFields()[0]",
+      "submitButtonIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].buttons().firstWithPredicate(\"label == 'Ingresar' \")",
+      "usernameFieldIOS_10": "XPath:://XCUIElementTypeTextField[@value='Correo']",
+      "passwordFieldIOS_10": "XPath:://XCUIElementTypeSecureTextField[@value='Contraseña']",
+      "submitButtonIOS_10": "XPath:://XCUIElementTypeButton[@label='Ingresar']",
+      "tileLocatorSuffix": "TVE grd Logo",
+      "authN_authZ_credential": [
+        {
+          "locale": "Argentina",
+          "login": "juangigared@gigared.com.ar",
+          "password": "gigaredjuan33",
+          "environment": "staging",
+          "brands": "mtv"
+        },
+        {
+          "locale": "Argentina",
+          "login": "juangigared@gigared.com.ar",
+          "password": "gigaredjuan33",
+          "environment": "staging",
+          "brands": "comedycentral"
+        },
+        {
+          "locale": "Argentina",
+          "login": "juangigared@gigared.com.ar",
+          "password": "gigaredjuan33",
+          "environment": "staging",
+          "brands": "nick"
+        }
+      ],
+      "authN_NoauthZ_credential": [
+        {
+          "locale": "Argentina",
+          "login": "charleschaplin@gigared.com.ar",
+          "password": "moderntimes36",
+          "environment": "staging",
+          "brands": "mtv"
+        },
+        {
+          "locale": "Argentina",
+          "login": "charleschaplin@gigared.com.ar",
+          "password": "moderntimes36",
+          "environment": "staging",
+          "brands": "comedycentral"
+        },
+        {
+          "locale": "Argentina",
+          "login": "charleschaplin@gigared.com.ar",
+          "password": "moderntimes36",
+          "environment": "staging",
+          "brands": "nick"
+        }
+      ]
+    },
+    {
+      "name": "Axtel",
+      "mvpd_id": "axt",
+      "passwordFieldAndroid": "XPath:://android.view.View/android.widget.EditText[contains(@password,'true')]",
+      "submitButtonAndroid": "XPath:://android.widget.Button[contains(@content-desc,'Ingresar') or contains(@text,'Ingresar')]",
+      "usernameFieldAndroid": "XPath:://android.view.View/android.widget.EditText[1]",
+      "usernameFieldIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].textFields()[0]",
+      "passwordFieldIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].secureTextFields()[0]",
+      "submitButtonIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].buttons().firstWithPredicate(\"label == 'Ingresar' \")",
+      "usernameFieldIOS_10": "XPath:://XCUIElementTypeTextField",
+      "passwordFieldIOS_10": "XPath:://XCUIElementTypeSecureTextField",
+      "submitButtonIOS_10": "XPath:://XCUIElementTypeButton[@label='Ingresar']",
+      "tileLocatorSuffix": "TVE axt Logo",
+      "authN_authZ_credential": [
+        {
+          "locale": "Mexico",
+          "login": "jmartinez@axtel.com.mx",
+          "password": "Axtel2012",
+          "environment": "staging",
+          "brands": "mtv"
+        },
+        {
+          "locale": "Mexico",
+          "login": "jmartinez@axtel.com.mx",
+          "password": "Axtel2012",
+          "environment": "staging",
+          "brands": "nick"
+        },
+        {
+          "locale": "Mexico",
+          "login": "jmartinez@axtel.com.mx",
+          "password": "Axtel2012",
+          "environment": "staging",
+          "brands": "comedycentral"
+        }
+      ]
+    },
+    {
+      "name": "Boxer",
+      "mvpd_id": "boxer",
+      "passwordFieldAndroid": "XPath:://android.widget.EditText[contains(@resource-id,'session_password')]",
+      "submitButtonAndroid": "XPath:://android.widget.Button[contains(@content-desc,'Sign in') or contains(@text,'Sign in')]",
+      "usernameFieldAndroid": "XPath:://android.widget.EditText[contains(@resource-id,'session_email')]",
+      "usernameFieldIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].textFields()[0]",
+      "passwordFieldIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].secureTextFields()[0]",
+      "submitButtonIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].buttons().firstWithPredicate(\"label == 'Sign in' \")",
+      "usernameFieldIOS_10": "XPath:://XCUIElementTypeTextField",
+      "passwordFieldIOS_10": "XPath:://XCUIElementTypeSecureTextField",
+      "submitButtonIOS_10": "XPath:://XCUIElementTypeButton[@label='Sign in']",
+      "tileLocatorSuffix": "TVE boxer Logo",
+      "authN_authZ_credential": [
+        {
+          "locale": "Denmark",
+          "login": "tve@boxertest.com",
+          "password": "password",
+          "environment": "staging",
+          "brands": "mtv"
+        },
+        {
+          "locale": "Denmark",
+          "login": "tve@boxertest.com",
+          "password": "password",
+          "environment": "staging",
+          "brands": "nick"
+        }
+      ]
+    },
+    {
+      "name": "Stofa",
+      "mvpd_id": "stofa",
+      "passwordFieldAndroid": "XPath:://android.widget.EditText[contains(@resource-id,'mitLoginPassword')]",
+      "submitButtonAndroid": "XPath:://android.widget.Button[contains(@content-desc,'Opret adgang') or contains(@text,'Opret adgang')]",
+      "usernameFieldAndroid": "XPath:://android.widget.EditText[contains(@resource-id,'mitLoginUserName')]",
+      "usernameFieldIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].textFields()[0]",
+      "passwordFieldIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].secureTextFields()[0]",
+      "submitButtonIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].buttons().firstWithPredicate(\"label == 'Opret adgang' \")",
+      "usernameFieldIOS_10": "XPath:://XCUIElementTypeTextField",
+      "passwordFieldIOS_10": "XPath:://XCUIElementTypeSecureTextField",
+      "submitButtonIOS_10": "XPath:://XCUIElementTypeButton[@label='Opret adgang']",
+      "tileLocatorSuffix": "TVE stofa Logo",
+      "authN_authZ_credential": [
+        {
+          "locale": "Denmark",
+          "login": "stofadev009@gmail.com",
+          "password": "devViacom",
+          "environment": "staging",
+          "brands": "mtv"
+        },
+        {
+          "locale": "Denmark",
+          "login": "stofadev009@gmail.com",
+          "password": "devViacom",
+          "environment": "staging",
+          "brands": "nick"
+        }
+      ],
+      "authN_NoauthZ_credential": [
+        {
+          "locale": "Denmark",
+          "login": "stofapmtest2@gmail.com",
+          "password": "Stofa123",
+          "environment": "staging",
+          "brands": "mtv"
+        },
+        {
+          "locale": "Denmark",
+          "login": "stofapmtest2@gmail.com",
+          "password": "Stofa123",
+          "environment": "staging",
+          "brands": "nick"
+        }
+      ]
+    },
+    {
+      "name": "Sky",
+      "mvpd_id": "skynz",
+      "usernameFieldAndroid": "XPath:://android.widget.EditText[contains(@resource-id,'username')]",
+      "passwordFieldAndroid": "XPath:://android.widget.EditText[contains(@resource-id,'password')]",
+      "submitButtonAndroid": "XPath:://android.widget.Button[contains(@content-desc,'Submit') or contains(@text,'Submit')]",
+      "usernameFieldIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].textFields()[0]",
+      "passwordFieldIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].secureTextFields()[0]",
+      "submitButtonIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].buttons().firstWithPredicate(\"label == 'Submit' \")",
+      "usernameFieldIOS_10": "XPath:://XCUIElementTypeTextField",
+      "passwordFieldIOS_10": "XPath:://XCUIElementTypeSecureTextField",
+      "submitButtonIOS_10": "XPath:://XCUIElementTypeButton[contains(@label,'Submit')]",
+      "tileLocatorSuffix": "TVE skynz Logo",
+      "authN_authZ_credential": [
+        {
+          "locale": "Zealand",
+          "login": "iop_test102@mailinator.com",
+          "password": "password1!",
+          "environment": "staging",
+          "brands": "nick"
+        }
+      ]
+    },
+    {
+      "name": "Singtel",
+      "mvpd_id": "singtel",
+      "usernameFieldAndroid": "XPath:://android.widget.EditText[contains(@text,'Email')]",
+      "passwordFieldAndroid": "XPath:://android.widget.EditText[2]",
+      "submitButtonAndroid": "XPath:://android.widget.Button[contains(@content-desc,'Login') or contains(@text,'Login')]",
+      "usernameFieldIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].textFields()[0]",
+      "passwordFieldIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].secureTextFields()[0]",
+      "submitButtonIOS": "IosUIAutomation::.scrollViews()[0].webViews()[0].buttons()[0]",
+      "usernameFieldIOS_10": "XPath:://XCUIElementTypeTextField[@value='Email']",
+      "passwordFieldIOS_10": "XPath:://XCUIElementTypeSecureTextField[@value='Password']",
+      "submitButtonIOS_10": "XPath:://XCUIElementTypeButton[@label='Login']",
+      "tileLocatorSuffix": "TVE singtel Logo",
+      "authN_authZ_credential": [
+        {
+          "locale": "Singapore",
+          "login": "viacom1@singtel.com",
+          "password": "viacom1",
+          "environment": "staging",
+          "brands": "mtv"
+        },
+        {
+          "locale": "Singapore",
+          "login": "viacom1@singtel.com",
+          "password": "viacom1",
+          "environment": "staging",
+          "brands": "comedycentral"
+        }
+      ]
+    }
+  ]
+}

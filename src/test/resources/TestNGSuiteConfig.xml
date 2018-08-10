@@ -1,0 +1,76 @@
+<suite name="Auto Test Suite" parallel="methods" preserve-order="true" thread-count="1">
+
+    <!-- RUNTIME CONFIG -->
+    <parameter name="RunAsFactory" value="false"></parameter> <!-- true, false -->
+    <parameter name="Preinstalled" value="false"></parameter> <!-- true, false -->
+    <parameter name="OS" value="Android"></parameter> <!-- Android, Web, null -->
+    <parameter name="DeviceCategory" value="Phone"></parameter> <!-- Phone, Tablet, null -->
+    <parameter name="AppName" value="TVEDemo"></parameter> <!-- MTV, TVLand, CC, null, TVEDemo -->
+    <parameter name="DebugProxyPort" value="9999"></parameter>
+
+    <parameter name="ReRunOnFailure" value="false"></parameter>
+    <parameter name="ReRunOnFailureCount" value="1"></parameter>
+
+    <!-- APP CONFIG -->
+    <parameter name="AppURL" value="Latest"></parameter>
+    <parameter name="PathToAppPackage" value="null"></parameter>
+    <parameter name="BuildNumber" value="Latest"></parameter>
+    <parameter name="TVEDemoAndroidAppPackage" value="com.vmn.android.tvedemo.whitelabel"></parameter>
+    <parameter name="TVEDemoAndroidLaunchActivity" value="com.vmn.android.tvedemo.activity.StartActivity"></parameter>
+
+
+    <parameter name="ApplicationTitle" value="TVE Native Test Suite"></parameter>
+    <parameter name="PathToElements" value="/src/test/resources/elements/"></parameter>
+    <parameter name="PathToAppDataConfig" value="/src/test/resources/AppDataConfig.json"></parameter>
+
+    <!-- REPORT CONFIG -->
+    <parameter name="EmailSenderAddress" value="NOREPLY@dteqa.com"></parameter>
+    <parameter name="AttachAppXMLTreeLogs" value="true"></parameter>
+    <parameter name="AttachAppProxyLogs" value="true"></parameter>
+    <parameter name="PathToScreenshots" value="/test-output/screenshots/"></parameter>
+
+    <parameter name="PathToAllureWebResults" value="/test-output/allure-results/Web/"></parameter>
+    <parameter name="PathToAllureAndroidResults" value="/test-output/allure-results/Android/"></parameter>
+    <parameter name="PathToAllureAndroidLogos" value="/test-output/allure-results/Android/allure-report/logos"></parameter>
+    <parameter name="PathToAllureWebLogos" value="/test-output/allure-results/Web/allure-report/logos"></parameter>
+
+
+    <!-- WEBDRIVER CONFIG -->
+    <parameter name="WaitForWaitTime" value="20"></parameter> <!-- Seconds -->
+    <parameter name="PollingTime" value="500"></parameter> <!-- Milliseconds -->
+    <parameter name="ServerCommandTimeout" value="60"></parameter> <!-- Seconds < grid hub/node timeout -->
+
+    <!-- TVE -->
+    <parameter name="TveDataPath" value="elements/provider.json" />
+    <parameter name="DomesticTveDataPath" value="elements/DomesticProvider.json" />
+
+    <parameter name="IntTveDataPathAndroid" value="elements/IntProviderAndroidConfigs.json"/>
+
+    <!-- LISTENERS -->
+    <listeners>
+        <listener class-name="com.auto.common.listeners.TestListeners" />
+        <listener class-name="com.auto.common.listeners.SuiteListeners" />
+    </listeners>
+
+    <!-- TEST EXECUTION QUEUE -->
+    <test verbose="1" name="All Tests" annotations="JDK">
+
+        <!-- TEST GROUPS
+            "Full" - all tests in the test suite.
+            "Broken" - those tests that are broken and safe to ignore until they can be resolved.
+        -->
+        <groups>
+            <run>
+                <include name="Debug" />
+                <exclude name="Broken" />
+                <exclude name="Unknown"/>
+            </run>
+        </groups>
+
+        <packages>
+            <package name="com.auto.test.tests.*" />
+        </packages>
+
+    </test>
+
+</suite>
