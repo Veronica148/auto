@@ -47,7 +47,7 @@ public class SimpleTest extends BaseTest implements ITest{
         intProvidersPicker = new IntProvidersPicker();
     }
 
-    @Test(groups = {Config.GroupProps.FULL, Config.GroupProps.DEBUG})
+    @Test(groups = {Config.GroupProps.DEBUG})
     public void testGeneralWork(){
         BaseProvider bProvider = new BaseProvider(locale, brand, providerName, environment, runParams);
         TestRun.setBaseProvider(bProvider);
