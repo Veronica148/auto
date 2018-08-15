@@ -5,7 +5,7 @@ Collection of tests and usefull features.
 For running tests execute this command:
 # ToDo mvn clean test -Denv=dev
 # ToDo here is env - environment, can be dev, qa, local
- mvn clean test -Denv=dev -Dgroups=Full
+ mvn clean test -Denv=dev -Dgroups=Full -DforkCount=0 -Dsystem.test.os=iOS
 
 ======================
 Done:
