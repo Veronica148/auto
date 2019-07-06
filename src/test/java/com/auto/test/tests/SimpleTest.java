@@ -45,6 +45,8 @@ public class SimpleTest extends BaseTest implements ITest{
     @BeforeMethod(alwaysRun = true)
     public void setupTest() {
         intProvidersPicker = new IntProvidersPicker();
+        long id = Thread.currentThread().getId();
+        System.out.println("Setup " + ". Thread id is: " + id);
     }
 
     @Test(groups = {Config.GroupProps.DEBUG})

@@ -1,9 +1,10 @@
-<suite name="Auto Test Suite" parallel="methods" preserve-order="true" thread-count="1">
+<suite name="Auto Test Suite" parallel="classes" thread-count="4" preserve-order="true">
 
     <!-- RUNTIME CONFIG -->
     <parameter name="RunAsFactory" value="false"></parameter> <!-- true, false -->
     <parameter name="Preinstalled" value="false"></parameter> <!-- true, false -->
     <parameter name="OS" value="Android"></parameter> <!-- Android, Web, null -->
+    <parameter name="Browser" value="Chrome"></parameter> <!-- Chrome, Firefox, IE -->
     <parameter name="DeviceCategory" value="Phone"></parameter> <!-- Phone, Tablet, null -->
     <parameter name="AppName" value="TVEDemo"></parameter> <!-- MTV, TVLand, CC, null, TVEDemo -->
     <parameter name="DebugProxyPort" value="9999"></parameter>
@@ -59,9 +60,14 @@
             "Full" - all tests in the test suite.
             "Broken" - those tests that are broken and safe to ignore until they can be resolved.
         -->
+        <!--<classes>
+            <class name="com.auto.test.tests.flims.FlimsTestChrome" />
+            <class name="com.auto.test.tests.flims.FlimsTestChrome2" />
+        </classes>-->
         <groups>
             <run>
                 <include name="Debug" />
+                <include name="Full" />
                 <exclude name="Broken" />
                 <exclude name="Unknown"/>
             </run>

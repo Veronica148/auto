@@ -1,0 +1,14 @@
+<suite name="Test-class Suite" parallel="classes" thread-count="2" >
+    <test name="Test-class test" >
+        <!--<classes>
+            <class name="com.auto.test.tests.toDel.ParallelClassesTestOne" />
+            <class name="com.auto.test.tests.toDel.ParallelClassesTestTwo" />
+        </classes>-->
+        <classes>
+            <class name="com.auto.test.tests.flims.FlimsTestChrome" />
+            <class name="com.auto.test.tests.flims.FlimsTestChrome2" />
+        </classes>
+
+<!-- https://howtodoinjava.com/testng/testng-executing-parallel-tests/ -->
+    </test>
+</suite>

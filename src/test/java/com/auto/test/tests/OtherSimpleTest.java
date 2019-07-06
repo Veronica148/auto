@@ -15,10 +15,12 @@ public class OtherSimpleTest extends BaseTest {
 
     @Test(groups = {Config.GroupProps.FULL})
     public void testGeneral(){
+        long id = Thread.currentThread().getId();
+        System.out.println("Setup " + ". Thread id is: " + id);
         Assert.assertTrue(true, "Not true!!!!");
     }
 
-    @Test(groups = {Config.GroupProps.FULL})
+    @Test//(groups = {Config.GroupProps.FULL})
     public void testGeneral2(){
         //read smth from .properties file and print
 

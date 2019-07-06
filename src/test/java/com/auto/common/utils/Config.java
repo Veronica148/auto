@@ -32,6 +32,7 @@ public class Config {
         Boolean PREINSTALLED = Config.getBoolean("Preinstalled");
         String APP_NAME = Config.getString("AppName");
         String OS = Config.getString("OS");
+        String BROWSER = Config.getString("Browser");
         Integer DEBUG_PROXY_PORT = Config.getInt("DebugProxyPort");
 
 

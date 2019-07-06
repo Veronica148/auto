@@ -1,5 +1,6 @@
 package com.auto.common.utils;
 
+import com.auto.common.driver.DriverType;
 import com.auto.common.models.intProvider.BaseProvider;
 import com.auto.common.props.BrandType;
 import com.auto.common.props.DeviceCategory;
@@ -17,6 +18,7 @@ public class TestRun {
     private static ThreadLocal<String> androidLaunchActivity = new ThreadLocal<String>();
     private static ThreadLocal<String> appPackagePath = new ThreadLocal<String>();
     private static ThreadLocal<BrandType> brand = new ThreadLocal<BrandType>();
+    private static ThreadLocal<DriverType> browser = new ThreadLocal<DriverType>();
     private static ThreadLocal<BaseProvider> baseProviderThreadLocal = new ThreadLocal<BaseProvider>();
 
     public static synchronized void init(String runParams) {
@@ -25,6 +27,9 @@ public class TestRun {
 
         // set the device type
         setDeviceCategory(DeviceCategory.valueOf(ConfigProps.DEVICE_CATEGORY.toUpperCase()));
+
+        //set browser
+        setBrowser(DriverType.valueOf(ConfigProps.BROWSER.toUpperCase()));
 
         // set the app package
         if (isAndroid()) {
@@ -38,6 +43,11 @@ public class TestRun {
     public static synchronized void setMobileOS(MobileOS os) {
         mobileOS.set(os);
     }
+
+    public static synchronized void setBrowser(DriverType brow) {
+        browser.set(brow);
+    }
+
 
     public static synchronized MobileOS getMobileOS() {
         return mobileOS.get();
@@ -93,6 +103,10 @@ public class TestRun {
 
     public static BrandType getBrand() {
         return brand.get();
+    }
+
+    public static DriverType getBrowser() {
+        return browser.get();
     }
 
     public static synchronized void setBaseProvider(BaseProvider baseProvider) {

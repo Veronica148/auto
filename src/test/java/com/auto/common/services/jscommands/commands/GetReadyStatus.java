@@ -19,7 +19,7 @@ public class GetReadyStatus extends Command<String> {
 
     @Override
     public String build() {
-        return String.format(com.auto.common.services.jscommands.Commands.GET_READY_STATE.getCommandString());
+        return String.format(Commands.GET_READY_STATE.getCommandString());
     }
 
 }

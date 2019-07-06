@@ -25,9 +25,9 @@ public class SuiteListeners extends BaseTest implements ISuiteListener {
 
 
     @Override
-    public void onStart(ISuite iSuite) {
+    public void onStart(ISuite suite) {
 
-        TestRun.init("");
+        TestRun.init(null);
 
         //ToDo delete logos  and fail.html if exist
 
@@ -50,6 +50,19 @@ public class SuiteListeners extends BaseTest implements ISuiteListener {
             System.out.println("===deleting fail.ftml file............");
             failures.delete();
         }
+
+        //suite.se
+
+        /*Integer threadCount = 1;
+        try {
+            threadCount = Integer.parseInt(System.getProperty("threadCount"));
+            System.out.println("----------threadCount:  -------" + threadCount);
+            //if we pass -DthreadCount=3 in cmd
+        } catch (NumberFormatException e) {
+            threadCount = 2;
+           // threadCount = suite.getXmlSuite().getThreadCount();
+            System.out.println("----------threadCount:  ---NumberFormatException----" + threadCount);
+        }*/
 
     }
 

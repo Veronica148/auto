@@ -1,9 +1,9 @@
 package com.auto.common;
 
+import com.auto.common.utils.Config;
 import com.auto.common.utils.TestRun;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -20,14 +20,16 @@ public class BaseTest {
     protected static String apiHost = "";
     protected static final String sysProp = "env";
     protected static final String propFileName = "application.properties";
+    protected static final String browser = "browser";
+
+    protected static String browserToRun = "";
 
     public void setRunParams(String runParams) {
         this.runParams = runParams;
     }
 
     @BeforeSuite(alwaysRun = true)
-    public void setupEnv() {
-        System.out.println("Setting environment....");
+    public void setupEnv() { System.out.println("Setting environment....");
 
         String environment = System.getProperty(sysProp);
 
@@ -50,6 +52,17 @@ public class BaseTest {
         }
         System.out.println("environment BaseTest: "+ environment);
         apiHost = prop.getProperty(environment);
+
+        //System.out.println("Browser..." + TestRun.getBrowser()); - not null if we run testng.xml
+        browserToRun = System.getProperty(browser);
+        if (browserToRun == null) {
+            System.out.println("--------------------in null if--------------");
+            //taking value from property file, if we didn't pass -Dbrowser in cmd
+            //driver = prop.getProperty("browser");
+            //or we can take default value from testng.xml
+            browserToRun = Config.ConfigProps.BROWSER.toUpperCase();
+        }
+        System.out.println("========driver===" + browserToRun);
     }
 
 
@@ -57,5 +70,7 @@ public class BaseTest {
     public void initTest() {
         TestRun.init(runParams);
     }
+
+
 
 }
