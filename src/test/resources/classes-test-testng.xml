@@ -5,8 +5,12 @@
             <class name="com.auto.test.tests.toDel.ParallelClassesTestTwo" />
         </classes>-->
         <classes>
-            <class name="com.auto.test.tests.flims.FlimsTestChrome" />
-            <class name="com.auto.test.tests.flims.FlimsTestChrome2" />
+            <class name="com.auto.test.tests.flims.chrome.FlimsTestChrome" />
+            <class name="com.auto.test.tests.flims.chrome.FlimsTestChrome2" />
+            <class name="com.auto.test.tests.flims.chrome.FlimsTestChrome3" />
+            <class name="com.auto.test.tests.flims.chrome.FlimsTestChrome4" />
+            <class name="com.auto.test.tests.flims.chrome.FlimsTestChrome5" />
+            <class name="com.auto.test.tests.flims.chrome.FlimsTestChrome6" />
         </classes>
 
 <!-- https://howtodoinjava.com/testng/testng-executing-parallel-tests/ -->

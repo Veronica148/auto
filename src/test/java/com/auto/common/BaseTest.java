@@ -1,9 +1,13 @@
 package com.auto.common;
 
+import com.auto.common.driver.DriverType;
+import com.auto.common.driver.WebBrowserPool;
+import com.auto.common.driver.WebDriverFactory;
+import com.auto.common.driver.impl.WebDriverProxy;
 import com.auto.common.utils.Config;
 import com.auto.common.utils.TestRun;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.*;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -23,6 +27,11 @@ public class BaseTest {
     protected static final String browser = "browser";
 
     protected static String browserToRun = "";
+
+    protected static WebBrowserPool pool;
+    protected WebDriver driver;
+    protected WebDriverProxy driverProxy;
+
 
     public void setRunParams(String runParams) {
         this.runParams = runParams;
@@ -58,11 +67,23 @@ public class BaseTest {
         if (browserToRun == null) {
             System.out.println("--------------------in null if--------------");
             //taking value from property file, if we didn't pass -Dbrowser in cmd
-            //driver = prop.getProperty("browser");
+            //driverProxy = prop.getProperty("browser");
             //or we can take default value from testng.xml
             browserToRun = Config.ConfigProps.BROWSER.toUpperCase();
         }
-        System.out.println("========driver===" + browserToRun);
+        System.out.println("========driverProxy===" + browserToRun);
+//        driverProxy.set(WebDriverFactory.getDriver(DriverType.valueOf(browserToRun)));
+        //ToDo add some parameter to TestNG xml, where we store the value of defaultThreadAmount. and if we don't pass through cmd, we use it.
+
+        int threadCount = Integer.parseInt(System.getProperty("threadCount","2"));//"-1"));
+
+        pool = WebBrowserPool.initBrowserPool(threadCount, DriverType.valueOf(browserToRun));
+    }
+
+    @BeforeClass(alwaysRun = true)
+    public void beforeClass(){
+        driverProxy = pool.takeBrowserDriver();
+        driver = driverProxy.getWebDriverInstance();
     }
 
 
@@ -71,6 +92,17 @@ public class BaseTest {
         TestRun.init(runParams);
     }
 
+    @AfterClass(alwaysRun = true)
+    public void afterClass(){
+        pool.returnBrowserDriver(driverProxy);
+        driver = null;
+        driverProxy = null;
+    }
 
+    @AfterSuite(alwaysRun = true)
+    public void afterSuite(){
+//        driverProxy.get().close();
+        pool.shutdown();
+    }
 
 }

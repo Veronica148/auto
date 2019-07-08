@@ -5,7 +5,7 @@ package com.auto.common.driver;
  */
 public class CapabilityFactory {
 
-    //create driver
+    //create driverProxy
     //createCapabilitiesForAndroid
     //ForAndroidWeb
     //ForWeb - Chrome and Firefox

@@ -51,8 +51,8 @@ public final class DriverUtils {
 //                .pollingEvery(DEFAULT_PULLING_EVERY, TimeUnit.MILLISECONDS)
 //                .until(new Function<WebDriver, Boolean>() {
 //
-//                    public Boolean apply(WebDriver driver) {
-//                        return driver.getWindowHandles().size() > windowHandles.size();
+//                    public Boolean apply(WebDriver driverProxy) {
+//                        return driverProxy.getWindowHandles().size() > windowHandles.size();
 //                    }
 //
 //                }, WindowDidNotOpenException.class, "New window didn't open");
@@ -89,9 +89,9 @@ public final class DriverUtils {
 
     }
 
-//    public static void waitForUrlChanged(WebDriver driver, final String previousUrl) {
+//    public static void waitForUrlChanged(WebDriver driverProxy, final String previousUrl) {
 //        //TimeConstants.IMPLICIT_WAIT = 30
-//        waitForUrlChanged(driver, previousUrl, 30);
+//        waitForUrlChanged(driverProxy, previousUrl, 30);
 //
 //    }
 
@@ -247,12 +247,12 @@ public final class DriverUtils {
         wait.until(ex);
     }
 
-//    public static void waitPopupWindowClosed(WebDriver driver) {
-//        FluentWait fluentWait = new FluentWait(driver);
+//    public static void waitPopupWindowClosed(WebDriver driverProxy) {
+//        FluentWait fluentWait = new FluentWait(driverProxy);
 //        LOGGER.info("Waiting for 10 seconds till popup window will be closed...");
 //        fluentWait.withTimeout(10L, TimeUnit.SECONDS).pollingEvery(500L, TimeUnit.MILLISECONDS).until(new Function() {
-//            public Boolean apply(WebDriver driver) {
-//                return driver.getWindowHandles().size() < 2?Boolean.valueOf(true):Boolean.valueOf(false);
+//            public Boolean apply(WebDriver driverProxy) {
+//                return driverProxy.getWindowHandles().size() < 2?Boolean.valueOf(true):Boolean.valueOf(false);
 //            }
 //        });
 //        LOGGER.info("... Closed!");

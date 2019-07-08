@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public abstract class DriverManager {
 
-    //protected static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
+    //protected static ThreadLocal<WebDriver> driverProxy = new ThreadLocal<WebDriver>();
 //https://stackoverflow.com/questions/28723077/test-execution-with-multiple-classes-in-testng-using-threads
     private static ThreadLocal<DriverManager> instance = new ThreadLocal<DriverManager>();
 
@@ -17,7 +17,7 @@ public abstract class DriverManager {
         if (null == driver){
             createDriver();
         }
-        //return driver.get();
+        //return driverProxy.get();
         return driver;
     }
 
@@ -36,7 +36,7 @@ public abstract class DriverManager {
 
     public void quitDriver(){
         if(null != driver){
-            //driver.get().quit();
+            //driverProxy.get().quit();
             driver.quit();
             driver = null;
         }
