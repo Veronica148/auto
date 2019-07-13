@@ -42,7 +42,7 @@ public class FlimsTestChrome extends BaseTest {
         System.out.println("set up-----------------------------");
         driverManager = DriverManagerFactory.getManager(DriverType.valueOf(browserToRun));
         //driver = driverManager.getDriver();
-        driver = driverManager.getDriver2();
+        driver = driverManager.getDriver();
         long id = Thread.currentThread().getId();
         System.out.println("Setup " + ". Thread id is: " + id);
 

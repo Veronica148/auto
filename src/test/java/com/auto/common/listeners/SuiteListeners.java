@@ -50,8 +50,7 @@ public class SuiteListeners extends BaseTest implements ISuiteListener {
             System.out.println("===deleting fail.ftml file............");
             failures.delete();
         }
-
-        //suite.se
+        
 
         /*Integer threadCount = 1;
         try {
