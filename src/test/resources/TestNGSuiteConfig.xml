@@ -5,6 +5,7 @@
     <parameter name="Preinstalled" value="false"></parameter> <!-- true, false -->
     <parameter name="OS" value="Android"></parameter> <!-- Android, Web, null -->
     <parameter name="Browser" value="Chrome"></parameter> <!-- Chrome, Firefox, IE -->
+    <parameter name="Branch" value="master"></parameter> <!-- feature/workshops-refactoring -->
     <parameter name="DeviceCategory" value="Phone"></parameter> <!-- Phone, Tablet, null -->
     <parameter name="AppName" value="TVEDemo"></parameter> <!-- MTV, TVLand, CC, null, TVEDemo -->
     <parameter name="DebugProxyPort" value="9999"></parameter>

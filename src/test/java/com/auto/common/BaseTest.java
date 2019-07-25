@@ -1,5 +1,6 @@
 package com.auto.common;
 
+import com.auto.common.constants.EnvironmentConstants;
 import com.auto.common.utils.Config;
 import com.auto.common.utils.TestRun;
 import org.testng.annotations.BeforeMethod;
@@ -21,6 +22,7 @@ public class BaseTest {
     protected static final String sysProp = "env";
     protected static final String propFileName = "application.properties";
     protected static final String browser = "browser";
+    protected static String url = "";
 
     protected static String browserToRun = "";
 
@@ -36,6 +38,8 @@ public class BaseTest {
         if (environment == null) {
             environment = "qa";
         }
+        String branch = Config.ConfigProps.BRANCH;
+        url = String.format(EnvironmentConstants.WEB_CLIENT_URL, branch);
 
         InputStream inputStream;
         Properties prop = new Properties();

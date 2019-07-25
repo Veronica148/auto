@@ -11,14 +11,20 @@ public class WebClientMainPage extends Page {
     @FindBy(xpath = "//div[@class='app-tile-header-name'][text()='Projects']")
     private WebElement projects;
 
-    @FindBy(xpath = "//label[contains(@class,'app-tile')][contains(text(),'Projects')]")
+    @FindBy(xpath = "//label[contains(@class,'app-tile')][contains(text(),'Proje')]")
     private WebElement projectHeader;
+
+    @FindBy(xpath = "//div[@class='app-tiles-container']")
+    private WebElement sections;
+
+    @FindBy(xpath = "//a[@href.bind = 'settingsRoute']")
+    private WebElement settings;
 
 
     public WebClientMainPage(final WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);//WebClientMainPage.class);
-        //checkPage();
+        checkPage();
     }
 
     @Override
@@ -26,9 +32,14 @@ public class WebClientMainPage extends Page {
         DriverUtils.waitForElementAppeared(driver, projectHeader);
     }
 
+    public SettingsPage changeLanguage(){
+        System.out.println("Clicking on settings btn");
+        settings.click();
+        return new SettingsPage(driver);
+    }
+
     public ProjectsPage goToProjectsPage(){
         projects.click();
-
         return new ProjectsPage(driver);
     }
 

@@ -33,6 +33,7 @@ public class Config {
         String APP_NAME = Config.getString("AppName");
         String OS = Config.getString("OS");
         String BROWSER = Config.getString("Browser");
+        String BRANCH = Config.getString("Branch");
         Integer DEBUG_PROXY_PORT = Config.getInt("DebugProxyPort");
 
 
