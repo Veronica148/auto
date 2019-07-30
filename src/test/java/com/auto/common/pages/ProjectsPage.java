@@ -101,7 +101,7 @@ public class ProjectsPage extends Page {
     public int getAmountOfProjects() {
         //projects amount in format: number Total
         int amount = Integer.parseInt(projectAmount.getText().split("\\s")[0]);//20 Total
-        System.out.println("amount of projects==="+amount);
+        logger.info("amount of projects===" + amount);
         return amount;
     }
 
@@ -120,6 +120,7 @@ public class ProjectsPage extends Page {
         DriverUtils.waitForElementDissAppeared(driver, buffering);
 
         fillVehicle();
+        DriverUtils.waitForElementDissAppeared(driver, buffering);
         saveBtn.click();
     }
 
@@ -144,6 +145,7 @@ public class ProjectsPage extends Page {
         DriverUtils.waitForElementDissAppeared(driver, buffering);
 
         fillVehicle();
+        DriverUtils.waitForElementDissAppeared(driver, buffering);
         saveBtn.click();
     }
     private String getRandomStr(){
@@ -175,7 +177,7 @@ public class ProjectsPage extends Page {
     private void fillVehicle(){
         addVehicleBtn.click();
         //buffering
-        vehicleSearch.searchByPlateNumber(driver,"S-060752");
+        vehicleSearch.searchByPlateNumber(driver,"S-060262");
     }
 
     private void setStartDateFromPicker(){

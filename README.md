@@ -31,3 +31,7 @@ mvn clean test -Denv=dev -Dgroups=Full -DforkCount=0 -Dbrowser=FIREFOX
 ===-Ddataproviderthreadcount="6"
 
 mvn clean test -DsuiteXmlFile=TestNGSuiteConfig.xml -Denv=dev -Dgroups=Smoke -DforkCount=0 -Dbrowser=CHROME -Dbranch=master
+mvn clean test -DsuiteXmlFile=TestNGSuiteConfig.xml -Dgroups=Debug -DforkCount=0 -Dbrowser=CHROME -Dbranch=master
+
+
+mvn clean test -DsuiteXmlFile=TestNGSuiteConfig.xml -Denv=dev -Dgroups=Debug  -DforkCount=0 -Dbrowser=CHROME -Dbranch=master
