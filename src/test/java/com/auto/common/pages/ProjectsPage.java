@@ -118,6 +118,8 @@ public class ProjectsPage extends Page {
 //        DriverUtils.takeScreenshot(driver, "afterSleep");
         fillResponsible();
         DriverUtils.waitForElementDissAppeared(driver, buffering);
+
+        fillVehicle();
         saveBtn.click();
     }
 
@@ -173,17 +175,14 @@ public class ProjectsPage extends Page {
     private void fillVehicle(){
         addVehicleBtn.click();
         //buffering
-        vehicleSearch.searchByPlateNumber(driver,"S-WV 1000");
+        vehicleSearch.searchByPlateNumber(driver,"S-060752");
     }
 
     private void setStartDateFromPicker(){
         DriverUtils.waitForElementDissAppeared(driver, buffering);
         startDatePicker.click();
-
         logger.info("Current day:" + getCurrentDay());
-
         driver.findElement(By.xpath(String.format(dateTemplateXPath, Integer.parseInt(getCurrentDay())))).click();
-
     }
 
     private void setEndDateFromPicker(){
@@ -194,13 +193,12 @@ public class ProjectsPage extends Page {
         //toDo loging when end of month (with 'new day')
         int date = Integer.parseInt(curDate);
         int newDate = date + 3;
-        if(newDate > 28) {
+        if(newDate < 28) {
             driver.findElement(By.xpath(String.format(dateTemplateXPath, newDate))).click();
         } else{
-            driver.findElement(By.xpath(String.format(newDateTemplateXPath, 3))).click();
+            newDate = 3;
+            driver.findElement(By.xpath(String.format(newDateTemplateXPath, newDate))).click();
         }
-
         logger.info("Current day:" + newDate);
-
     }
 }

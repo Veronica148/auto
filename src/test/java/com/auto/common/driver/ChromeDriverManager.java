@@ -5,7 +5,6 @@ import java.util.concurrent.TimeUnit;
 
 public class ChromeDriverManager extends DriverManager{
 
-
     @Override
     protected void createDriver() {
 

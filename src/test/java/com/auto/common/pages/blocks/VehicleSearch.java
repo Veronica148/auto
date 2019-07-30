@@ -69,6 +69,7 @@ public class VehicleSearch extends HtmlElement {
         car.select();
         add.click();
         setFromDateFromPicker(driver);
+        DriverUtils.waitForElementDissAppeared(driver, buffering);
         setToDateFromPicker(driver);
         DriverUtils.waitForElementDissAppeared(driver, buffering);
         save.click();
@@ -89,10 +90,11 @@ public class VehicleSearch extends HtmlElement {
         //toDo loging when end of month (with 'new day')
         int date = Integer.parseInt(curDate);
         int newDate = date + 3;
-        if(newDate > 28) {
+        if(newDate < 28) {
             driver.findElement(By.xpath(String.format(dateTemplateXPath, newDate))).click();
         } else{
-            driver.findElement(By.xpath(String.format(newDateTemplateXPath, 3))).click();
+            newDate = 3;
+            driver.findElement(By.xpath(String.format(newDateTemplateXPath, newDate))).click();
         }
 
         logger.info("Current day:" + newDate);

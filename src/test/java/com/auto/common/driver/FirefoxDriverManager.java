@@ -8,7 +8,10 @@ public class FirefoxDriverManager extends DriverManager {
 
     @Override
     protected void createDriver() {
-        System.setProperty("webdriver.firefox.marionette","d:\\Veronica\\Work\\git\\auto\\src\\test\\resources\\drivers\\geckodriver.exe");
+        ClassLoader classLoader = getClass().getClassLoader();
+        String exePath = classLoader.getResource("drivers/geckodriver.exe").getPath();
+        System.setProperty("webdriver.firefox.marionette", exePath);
+
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
