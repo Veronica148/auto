@@ -48,8 +48,8 @@ public class CreateProjectTest extends BaseTest {
         int amountOfProjects = projectsPage.getAmountOfProjects();
         Assert.assertTrue(amountOfProjects>0);
 
-        //projectsPage.createProject("TestProject","From auto tests","09-09-2019", "10-10-2019");
-        projectsPage.createProjectFromCurrentDate("AutoTest","From auto tests");
+        projectsPage.createProject("TestProject","From auto tests","09-09-2019", "10-10-2019");
+        //projectsPage.createProjectFromCurrentDate("AutoTest","From auto tests");
     }
 
     @Test(groups = {Config.GroupProps.SMOKE})

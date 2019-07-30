@@ -138,7 +138,7 @@ public class ProjectsPage extends Page {
         setStartDateFromPicker();
         setEndDateFromPicker();
 
-        plant.sendKeys("456");
+        plant.sendKeys("789");
         DriverUtils.waitForElementDissAppeared(driver, buffering);
 
         fillResponsible();
@@ -177,7 +177,7 @@ public class ProjectsPage extends Page {
     private void fillVehicle(){
         addVehicleBtn.click();
         //buffering
-        vehicleSearch.searchByPlateNumber(driver,"S-060262");
+        vehicleSearch.searchByPlateNumber(driver,"S-WV 126");
     }
 
     private void setStartDateFromPicker(){
